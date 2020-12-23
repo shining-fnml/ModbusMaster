@@ -75,6 +75,7 @@ class ModbusMaster
     void idle(void (*)());
     void preTransmission(void (*)());
     void postTransmission(void (*)());
+    void setSlave(uint8_t);
 
     // Modbus exception codes
     /**

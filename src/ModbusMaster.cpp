@@ -136,11 +136,10 @@ void ModbusMaster::send(uint8_t data)
 }
 
 
-
-
-
-
-
+void ModbusMaster::setSlave(uint8_t slave)
+{
+  _u8MBSlave = slave;
+}
 
 
 uint8_t ModbusMaster::available(void)
