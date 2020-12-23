@@ -75,7 +75,7 @@ class ModbusMaster
     void idle(void (*)());
     void preTransmission(void (*)());
     void postTransmission(void (*)());
-    void setSerial(int baudrate, word mode) { /* no effects: just to have a consistent interface */ };
+    void setSerial(int baudrate, word mode);
     void setSlave(uint8_t);
 
     // Modbus exception codes
@@ -220,7 +220,7 @@ class ModbusMaster
     uint8_t  readWriteMultipleRegisters(uint16_t, uint16_t);
     
   private:
-    Stream* _serial;                                             ///< reference to serial port object
+    HardwareSerial * _serial;                                             ///< reference to serial port object
     uint8_t  _u8MBSlave;                                         ///< Modbus slave (1..255) initialized in begin()
     static const uint8_t ku8MaxBufferSize                = 64;   ///< size of response/transmit buffers    
     uint16_t _u16ReadAddress;                                    ///< slave register from which to read

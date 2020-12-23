@@ -135,6 +135,11 @@ void ModbusMaster::send(uint8_t data)
   send(word(data));
 }
 
+void ModbusMaster::setSerial(int baudrate, word mode)
+{
+  _serial->flush();
+  _serial->begin(baudrate, mode);
+}
 
 void ModbusMaster::setSlave(uint8_t slave)
 {
