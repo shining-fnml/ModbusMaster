@@ -75,6 +75,7 @@ class ModbusMaster
     void idle(void (*)());
     void preTransmission(void (*)());
     void postTransmission(void (*)());
+    void setSerial(int baudrate, word mode) { /* no effects: just to have a consistent interface */ };
     void setSlave(uint8_t);
 
     // Modbus exception codes
